@@ -119,6 +119,7 @@ function popperscores_scripts() {
         /* Import Google Fonts*/
         //wp_enqueue_style('popperscores-google-fonts', 'https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700,700italic|Merriweather:400,400italic,700,700italic');
         wp_enqueue_style('popperscores-local-fonts', get_template_directory_uri() . '/fonts/custom-fonts.css');
+        wp_enqueue_style('popperscores-font-awesome', get_template_directory_uri() . '/fonts/font-awesome.css');        
         
 	wp_enqueue_script( 'popperscores-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20151215', true );
         wp_localize_script( 'popperscores-navigation', 'screenReaderText', array(
