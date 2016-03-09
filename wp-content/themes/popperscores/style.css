@@ -441,10 +441,10 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 3px solid;
-	border-color: #000;
+	border-color: #fff;
 	border-radius: 0;
-	background: #fff;
-	color: #000;
+	background: #000;
+	color: #fff;
         font-family: 'Fira Sans', sans-serif;
 	font-size: 12px;
 	font-size: 0.75rem;
@@ -470,6 +470,7 @@ input[type="reset"]:active,
 input[type="submit"]:active {
 	border-color: #000;
         color: #fff;
+        outline: 1px solid #fff;
 }
 
 input[type="text"],
@@ -699,6 +700,14 @@ a:active {
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+}
+.menu-toggle {
+    position: fixed;
+    z-index: 100;
+    left: 1em;
+    bottom: 1em;
+    font-size: 1em;
+    text-transform: uppercase;
 }
 
 @media screen and (min-width: 37.5em) {
