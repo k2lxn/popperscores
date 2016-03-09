@@ -708,10 +708,14 @@ a:active {
     bottom: 1em;
     font-size: 1em;
     text-transform: uppercase;
-    transition: all ease-out 400ms;
+    transition: bottom ease-out 400ms;
 }
 .menu-toggle.hide {
     bottom: -2.5em;
+}
+/* Make sure the button doesn't hide when menu is open */
+.toggled .menu-toggle.hide {
+    bottom: 1em;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -722,6 +726,33 @@ a:active {
 		display: block;
 	}
 }
+
+/* Hovering menu */
+.main-navigation.toggled {
+    position: fixed;
+    bottom: 0;
+    padding: 1em;
+    z-index: 1;
+}
+.main-navigation.toggled ul {
+    max-height: calc(100vh - 8em);
+    overflow-y: auto;
+} 
+.nav-menu {
+    padding: 1em;
+    margin-bottom: 3em;
+    background: #000;
+}
+/* Close nested <ul>s when .main-navigation is toggled on */
+.main-navigation.toggled ul ul {
+    display: none;
+}
+/* ... allow them to open */
+.main-navigation.toggled ul ul.toggled-on,
+.main-navigation.toggled ul ul.toggled-on > ul {
+    display: block;
+}
+
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
@@ -744,6 +775,9 @@ a:active {
 	text-align: right;
 	width: 50%;
 }
+
+
+
 
 /*--------------------------------------------------------------
 # Accessibility
